@@ -1,0 +1,75 @@
+html, body{
+    margin-top: 50px;
+    height: 100%;
+    text-align: center;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+h1{
+    font-size: 40px;
+}
+
+.game{
+    position: relative;
+    display: inline-block;
+    height: 60%;
+}
+
+.game img{
+    cursor: pointer;
+}
+
+.game .safari{
+    margin-top: 50px;
+    height: 600px;
+    width: 800px;
+}
+
+.game .gazelle{
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    z-index: 1;
+    max-height: 50px;
+
+    transition-property: max-height;
+    transition-duration: 750ms;
+    transition-timing-function: ease-in-out;
+    animation: move 2s linear infinite;
+    offset: path("M 100 100 L 700 100 ") auto;
+}
+
+.game .gazelle:hover{
+    max-height: 180px;
+}
+
+.game .gazelle2{
+    position: absolute;
+    top: 260px;
+    left: 271px;
+    z-index: 1;
+    height: 50px;
+
+    /* transition-property: height;
+    transition-duration: 750ms;
+    transition-timing-function: ease;
+    transition-delay: 500ms; */
+
+    transition: height 750ms linear 500ms;
+    
+}
+
+.game .gazelle2:hover{
+    height: 500px;
+}
+
+@keyframes move {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
